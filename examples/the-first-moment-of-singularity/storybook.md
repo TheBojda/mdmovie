@@ -1,3 +1,9 @@
+---
+title: The first moment of the singularity
+author: Laszlo Fazekas (thebojda@gmail.com)
+rights: Copyright © 2023 Laszlo Fazekas, All rights reserved
+---
+
 # The first moment of the singularity
 
 ![](images/000_singularity_prev_text.png){: duration='16' }
