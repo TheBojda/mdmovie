@@ -1,5 +1,10 @@
+import re
+
 import markdown
 import html.parser
+
+from generators.SSMLGenerator import SSMLGenerator
+from generators.VideoGenerator import VideoGenerator
 
 
 def generate_html_tag(tag_name, attribute_list):
@@ -45,7 +50,16 @@ if __name__ == '__main__':
 
     md = markdown.Markdown(extensions=['markdown.extensions.attr_list', 'meta'])
     html = md.convert(storybook)
+    html = re.sub('\n\s*', '', html)
 
-    parser = StorybookHTMLParser()
-    parser.feed(html)
-    print(parser.get_ssml())
+    # parser = StorybookHTMLParser()
+    # parser.feed(html)
+    # print(parser.get_ssml())
+
+    # generator = SSMLGenerator()
+    # generator.feed(html)
+    # print(generator.generate())
+
+    generator = VideoGenerator('examples/the-first-moment-of-singularity')
+    generator.feed(html)
+    generator.generate("test.mp4")
