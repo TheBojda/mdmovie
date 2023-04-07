@@ -1,4 +1,4 @@
-from generators.GeneratorBase import GeneratorBase
+import html.parser
 
 
 def generate_html_tag(tag_name, attribute_list):
@@ -10,7 +10,7 @@ def generate_html_tag(tag_name, attribute_list):
     return html_tag
 
 
-class SSMLGenerator(GeneratorBase):
+class SSMLGenerator(html.parser.HTMLParser):
 
     def __init__(self):
         super().__init__()

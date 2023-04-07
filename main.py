@@ -4,6 +4,7 @@ import markdown
 import html.parser
 
 from generators.SSMLGenerator import SSMLGenerator
+from generators.SubtitleGenerator import SubtitleGenerator
 from generators.VideoGenerator import VideoGenerator
 
 
@@ -60,6 +61,9 @@ if __name__ == '__main__':
     # generator.feed(html)
     # print(generator.generate())
 
-    generator = VideoGenerator('examples/the-first-moment-of-singularity')
-    generator.feed(html)
-    generator.generate("test.mp4")
+    # generator = VideoGenerator('examples/the-first-moment-of-singularity')
+    # generator.feed(html)
+    # generator.generate("test.mp4")
+
+    generator = SubtitleGenerator()
+    generator.generate('examples/the-first-moment-of-singularity/voice/a7b46f40-b767-4734-bccb-5f629e296ee0.marks', 'examples/the-first-moment-of-singularity/voice/a7b46f40-b767-4734-bccb-5f629e296ee0.sub')
